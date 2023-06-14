@@ -63,13 +63,9 @@ public class TechJobs {
 
                 if (searchField.equals("all")) {
                     printJobs(JobData.findByValue(searchTerm));
-                    System.out.println("Should search by value");
-                    System.out.println(JobData.findByValue(searchTerm));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
-                    System.out.println("Should search by columns");
-                    System.out.println(searchField);
-                    System.out.println(JobData.findByColumnAndValue(searchField,searchTerm));
+
                 }
             }
         }
@@ -128,12 +124,11 @@ public class TechJobs {
             System.out.println("No Results.");
         } else {
             for (HashMap<String, String> jobs : someJobs) {
-                System.out.println("*****");
+                System.out.println("\n*****");
                 for (Map.Entry<String, String> job : jobs.entrySet()) {
                     System.out.println(job.getKey() + ": " + job.getValue());
                 }
                 System.out.println("*****");
-                System.out.println("");
             }
         }
     }
